@@ -1,6 +1,8 @@
 package com.example.learnersmarketplace
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,13 @@ class Signin : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        //fint the text view by use of its id
+        val signuptxt = findViewById<TextView>(R.id.txtsignup)
+
+        signuptxt.setOnClickListener {
+            val newpage = Intent(applicationContext, Signup::class.java)
+            startActivity(newpage)
         }
     }
 }
