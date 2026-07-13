@@ -1,6 +1,8 @@
 package com.example.learnersmarketplace
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,23 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //find the buttons by use of their Id's
+        val signupbtn = findViewById<Button>(R.id.signupbtn)
+        val signinbtn = findViewById<Button>(R.id.signinbtn)
+
+        //have the explicit intent
+        signinbtn.setOnClickListener {
+            val newpage = Intent(applicationContext, Signin::class.java)
+            startActivity(newpage)
+        }//end intent
+
+        signupbtn.setOnClickListener {
+            val newpage = Intent(applicationContext,Signup::class.java)
+            startActivity(newpage)
+
+        }
+
     }
+
 }
