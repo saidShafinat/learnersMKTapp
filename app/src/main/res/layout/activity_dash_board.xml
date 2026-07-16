@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F3FF"
+    android:padding="16dp"
+    tools:context=".DashBoardActivity">
+
+    <!-- Welcome Card -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="22dp"
+        android:background="@drawable/dashboard_header">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👋 Welcome Back!"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(user here)"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find books, notes, electronics and more 📚"
+            android:textColor="#F3EFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Fake Search Bar -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/search_bg"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍 Search products..."
+            android:textColor="#9E9E9E"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <!-- Categories -->
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="18dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="📚 Books"
+                android:gravity="center"
+                android:paddingHorizontal="18dp"
+                android:background="@drawable/category_chip"
+                android:textColor="#6A1B9A"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:text="💻 Electronics"
+                android:gravity="center"
+                android:paddingHorizontal="18dp"
+                android:background="@drawable/category_chip"
+                android:textColor="#6A1B9A"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:text="📝 Notes"
+                android:gravity="center"
+                android:paddingHorizontal="18dp"
+                android:background="@drawable/category_chip"
+                android:textColor="#6A1B9A"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:text="🎒 Stationery"
+                android:gravity="center"
+                android:paddingHorizontal="18dp"
+                android:background="@drawable/category_chip"
+                android:textColor="#6A1B9A"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- Section Title -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✨ Latest Listings"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#5E35B1"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Loading Bar -->
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginBottom="12dp"
+        android:indeterminate="true"/>
+
+    <!-- RecyclerView -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+        tools:listitem="@layout/single_item"/>
+
+</LinearLayout>
